@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Muhammad_Wildan_UTS" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorOnSecondary">@color/orange</item>
+        <item name="colorPrimary">@color/white</item>
+
+
+    </style>
+
+    <style name="Theme.Muhammad_Wildan_UTS" parent="Base.Theme.Muhammad_Wildan_UTS" />
+</resources>
