@@ -23,23 +23,24 @@ public class RegisterActivity extends AppCompatActivity {
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Registernama = binding.etRegnama.getText().toString().trim();
-                String Registeremail = binding.etRegemail.getText().toString().trim();
-                String Registerpassword = binding.etRegpassword.getText().toString().trim();
+                String nama = binding.etRegnama.getText().toString().trim();
+                String email = binding.etRegemail.getText().toString().trim();
+                String password = binding.etRegpassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(Registernama)) {
+                if (TextUtils.isEmpty(nama)) {
                     binding.etRegnama.setError("Nama harus di isi");
-                }else if (TextUtils.isEmpty(Registeremail)) {
+                }else if (TextUtils.isEmpty(email)) {
                     binding.etRegemail.setError("Email harus di isi");
-                } else if (TextUtils.isEmpty(Registerpassword)) {
+                } else if (TextUtils.isEmpty(password)) {
                     binding.etRegpassword.setError("Password harus di isi");
                 }else{
                     Intent register = new Intent(RegisterActivity.this, RegisterSuccessActivity.class);
-                    register.putExtra("registernama", Registernama);
-                    register.putExtra("registeremail", Registeremail);
-                    register.putExtra("registerpassword", Registerpassword);
+                    register.putExtra("nama", nama);
+                    register.putExtra("email", email);
+                    register.putExtra("password", password);
                     startActivity(register);
                     finish();
+
 
                 }
             }

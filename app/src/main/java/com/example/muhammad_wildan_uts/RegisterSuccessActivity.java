@@ -24,19 +24,18 @@ public class RegisterSuccessActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String nama = getIntent().getStringExtra("registernama");
-                binding.btnLoginsuccess.setText(nama);
-                String email = getIntent().getStringExtra("registeremail");
-                binding.btnLoginsuccess.setText(email);
-                String password = getIntent().getStringExtra("registerpassword");
-                binding.btnLoginsuccess.setText(password);
+                String nama = getIntent().getStringExtra("nama");
+                String email = getIntent().getStringExtra("email");
+                String password = getIntent().getStringExtra("password");
+
 
                 Intent registersuccess = new Intent(RegisterSuccessActivity.this, LoginActivity.class);
-                registersuccess.putExtra("nama", binding.btnLoginsuccess.getText().toString());
-                registersuccess.putExtra("email", binding.btnLoginsuccess.getText().toString());
-                registersuccess.putExtra("password", binding.btnLoginsuccess.getText().toString());
+                registersuccess.putExtra("nama", nama);
+                registersuccess.putExtra("email", email);
+                registersuccess.putExtra("password", password);
                 startActivity(registersuccess);
                 finish();
+
             }
         });
     }

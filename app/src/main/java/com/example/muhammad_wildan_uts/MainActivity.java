@@ -18,12 +18,14 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String dataNama = getIntent().getStringExtra("lognama");
-        binding.tvNamamain.setText("dataNama");
-        String dataEmail = getIntent().getStringExtra("logemail");
-        binding.tvEmailmain.setText("dataEmail");
-        String dataPassword = getIntent().getStringExtra("logpassword");
+        String dataNama = getIntent().getStringExtra("nama");
+        String dataEmail = getIntent().getStringExtra("email");
+        String dataPassword = getIntent().getStringExtra("password");
+
+        binding.tvNamamain.setText(dataNama);
+        binding.tvEmailmain.setText(dataEmail);
         binding.tvPasswordmain.setText(dataPassword);
+
 
 
 

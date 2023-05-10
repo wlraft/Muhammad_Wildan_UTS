@@ -26,27 +26,27 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mengambil String/inputan text dari edittext
-                String lognama = getIntent().getStringExtra("nama");
-                binding.etNama.setText(lognama);
+
+                String nama = getIntent().getStringExtra("nama");
+                String password = getIntent().getStringExtra("password");
                 String email = getIntent().getStringExtra("email");
-                String logpassword = getIntent().getStringExtra("password");
-                binding.etPassword.setText(logpassword);
 
+//                String lognama = binding.etNama.getText().toString();
+//                String logpassword = binding.etPassword.getText().toString();
 
-                // Mengvalidasi inputan
-                if (TextUtils.isEmpty(lognama)) {
+                if (TextUtils.isEmpty(nama)) {
                     binding.etNama.setError("Nama harus di isi");
-                }else if (TextUtils.isEmpty(logpassword)) {
+                }else if (TextUtils.isEmpty(password)) {
                     binding.etPassword.setError("Password harus di isi");
-                }else{
+                }
                     Intent login = new Intent(LoginActivity.this, MainActivity.class);
-                    login.putExtra("lognama", binding.etNama.getText().toString());
-                    login.putExtra("logpassword", binding.etPassword.getText().toString());
-                    login.putExtra("logemail", email);
+                login.putExtra("nama", nama);
+                login.putExtra("password", password);
+                login.putExtra("email", email);
                     startActivity(login);
                     finish();
-                }
+
+
 
 
 
