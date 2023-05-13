@@ -31,20 +31,27 @@ public class LoginActivity extends AppCompatActivity {
                 String password = getIntent().getStringExtra("password");
                 String email = getIntent().getStringExtra("email");
 
-//                String lognama = binding.etNama.getText().toString();
-//                String logpassword = binding.etPassword.getText().toString();
+                String lognama = binding.etNama.getText().toString().trim();
+                String logpassword = binding.etPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(nama)) {
+                if (TextUtils.isEmpty(lognama)) {
                     binding.etNama.setError("Nama harus di isi");
-                }else if (TextUtils.isEmpty(password)) {
+                }else if (TextUtils.isEmpty(logpassword)) {
                     binding.etPassword.setError("Password harus di isi");
                 }
+
+                if (lognama.equals(nama) && logpassword.equals(password)) {
                     Intent login = new Intent(LoginActivity.this, MainActivity.class);
-                login.putExtra("nama", nama);
-                login.putExtra("password", password);
-                login.putExtra("email", email);
+                    login.putExtra("nama", nama);
+                    login.putExtra("password", password);
+                    login.putExtra("email", email);
                     startActivity(login);
                     finish();
+                }else {
+                    Toast.makeText(LoginActivity.this, "Nama atau password salah", Toast.LENGTH_SHORT).show();
+                }
+
+
 
 
 
